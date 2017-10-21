@@ -165,10 +165,17 @@
 //   }
 // }
 
+// My menu styles 
+ul.menu{
+    a {color: $white;
+        &:hover {color:$apex-red;}
+    }
+}
+
 
 
 // hero slider
-$hero-full-screen-bg: url('https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') center center no-repeat;
+$hero-full-screen-bg: url('../img/apex-home-bg-1.jpg') center center no-repeat;
 $hero-full-screen-bg-size: cover;
 $hero-full-screen-text-color: $white;
 
