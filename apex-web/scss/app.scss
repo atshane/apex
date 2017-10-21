@@ -53,3 +53,144 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+
+// top bar navigation
+
+// $topbar-responsive-bg:black;
+// $topbar-responsive-animation-type: fade-in; // or use slide-down or none
+
+// .topbar-responsive {
+//     text-transform: uppercase;
+//   background: $topbar-responsive-bg;
+//   padding: 1rem 1.5rem;
+
+//   .topbar-responsive-logo {
+//     color: $white;
+//     vertical-align: middle;
+//   }
+
+//   .menu {
+//     background: $topbar-responsive-bg;
+
+//     li:last-of-type {
+//       margin-right: 0;
+//     }
+
+//     a {
+//       color: $white;
+//       transition: color 0.15s ease-in;
+
+//       &:hover {
+//         color: $apex-red;
+//       }
+
+//       @media screen and (max-width: 39.9375em) {
+//         padding: 0.875rem 0;
+//       }
+//     }
+
+//     .topbar-responsive-button {
+//       text-transform: uppercase;
+//       color: $white;
+//       border-color: $apex-red;
+//       transition: color 0.15s ease-in, background 0.15s ease-in;
+//       padding: 0!important;
+
+//       &:hover {
+//         background: $apex-red;
+//             a {color: $white;}
+//       }
+
+//       @media screen and (max-width: 39.9375em) {
+//         width: 100%;
+//         margin: 0.875rem 0;
+//       }
+//     }
+//   }
+
+//    @media screen and (max-width: 39.9375em) {
+//      padding: 0.75rem;
+
+//     .top-bar-title {
+//       position: relative;
+//       width: 100%;
+
+//       span {
+//         position: absolute;
+//         right: 0;
+//         border: 1px solid $apex-red;
+//         padding: 0.25rem 0.45rem;
+//         top: 50%;
+//         transform: translateY(-50%);
+
+//         .menu-icon {
+//           margin-bottom: 4px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity:0;
+//   } to {
+//     opacity:1;
+//   }
+// }
+
+// @keyframes slideDown {
+//   0% {
+//     transform: translateY(-100%);
+//   }
+//   100% {
+//     transform: translateY(0%);
+//   }
+// }
+
+// @include breakpoint(small only) {
+//   .topbar-responsive-links {
+//     animation-fill-mode: both;
+//     animation-duration: 0.5s;
+//     width: 100%;
+
+//     @if $topbar-responsive-animation-type == slide-down {
+//       animation: slideDown 1s ease-in;
+//     } @else if $topbar-responsive-animation-type == fade-in {
+//       animation: fadeIn 1s ease-in;
+//     } @else {
+//       animation: none;
+//     }
+//   }
+// }
+
+
+
+// hero slider
+$hero-full-screen-bg: url('https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') center center no-repeat;
+$hero-full-screen-bg-size: cover;
+$hero-full-screen-text-color: $white;
+
+.hero-full-screen {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: $hero-full-screen-bg;
+  background-size: $hero-full-screen-bg-size;
+
+  .middle-content-section {
+    color: $hero-full-screen-text-color;
+  }
+
+  .top-content-section {
+    width: 100%;
+  }
+
+  .bottom-content-section {
+    padding: 1rem;
+
+  }
+}
+
+
