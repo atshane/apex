@@ -5,9 +5,9 @@
 @import 'motion-ui';
 
 @include foundation-global-styles;
-//@include foundation-grid;
+@include foundation-grid;
 // @include foundation-flex-grid;
-@include foundation-xy-grid-classes;
+// @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -54,150 +54,95 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+// TYPOGRAPHY
+a {letter-spacing: 1px; transition: all 0.5s ease;}
+p.bigger {font-size: 1.125rem; line-height: 2rem;}
 
-// top bar navigation
-
-// $topbar-responsive-bg:black;
-// $topbar-responsive-animation-type: fade-in; // or use slide-down or none
-
-// .topbar-responsive {
-//     text-transform: uppercase;
-//   background: $topbar-responsive-bg;
-//   padding: 1rem 1.5rem;
-
-//   .topbar-responsive-logo {
-//     color: $white;
-//     vertical-align: middle;
-//   }
-
-//   .menu {
-//     background: $topbar-responsive-bg;
-
-//     li:last-of-type {
-//       margin-right: 0;
-//     }
-
-//     a {
-//       color: $white;
-//       transition: color 0.15s ease-in;
-
-//       &:hover {
-//         color: $apex-red;
-//       }
-
-//       @media screen and (max-width: 39.9375em) {
-//         padding: 0.875rem 0;
-//       }
-//     }
-
-//     .topbar-responsive-button {
-//       text-transform: uppercase;
-//       color: $white;
-//       border-color: $apex-red;
-//       transition: color 0.15s ease-in, background 0.15s ease-in;
-//       padding: 0!important;
-
-//       &:hover {
-//         background: $apex-red;
-//             a {color: $white;}
-//       }
-
-//       @media screen and (max-width: 39.9375em) {
-//         width: 100%;
-//         margin: 0.875rem 0;
-//       }
-//     }
-//   }
-
-//    @media screen and (max-width: 39.9375em) {
-//      padding: 0.75rem;
-
-//     .top-bar-title {
-//       position: relative;
-//       width: 100%;
-
-//       span {
-//         position: absolute;
-//         right: 0;
-//         border: 1px solid $apex-red;
-//         padding: 0.25rem 0.45rem;
-//         top: 50%;
-//         transform: translateY(-50%);
-
-//         .menu-icon {
-//           margin-bottom: 4px;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @keyframes fadeIn {
-//   from {
-//     opacity:0;
-//   } to {
-//     opacity:1;
-//   }
-// }
-
-// @keyframes slideDown {
-//   0% {
-//     transform: translateY(-100%);
-//   }
-//   100% {
-//     transform: translateY(0%);
-//   }
-// }
-
-// @include breakpoint(small only) {
-//   .topbar-responsive-links {
-//     animation-fill-mode: both;
-//     animation-duration: 0.5s;
-//     width: 100%;
-
-//     @if $topbar-responsive-animation-type == slide-down {
-//       animation: slideDown 1s ease-in;
-//     } @else if $topbar-responsive-animation-type == fade-in {
-//       animation: fadeIn 1s ease-in;
-//     } @else {
-//       animation: none;
-//     }
-//   }
-// }
-
-// My menu styles 
+// BUTTON STYLES 
+.button {
+  text-transform: uppercase; font-size: 1.125rem; letter-spacing: 1px; transition: all 0.5s ease; font-weight: 500;}
+.button.hollow {border: 3px solid #DA253F;color:$apex-body;
+    &:hover {color: $apex-body;}
+}
+// NAVIGATION
 ul.menu{
-    a {color: $white;
+    a {color: $apex-body; text-transform: uppercase;
         &:hover {color:$apex-red;}
     }
 }
+.title-bar .menu-icon {float: right;}
+.dropdown.menu a {padding-top: 1.2rem;} 
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after {margin-top: 1px !important;}
+img.menu-logo {padding-right:2rem;}
 
-
-
-// hero slider
-$hero-full-screen-bg: url('../img/apex-home-bg-1.jpg') center center no-repeat;
-$hero-full-screen-bg-size: cover;
-$hero-full-screen-text-color: $white;
-
-.hero-full-screen {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  background: $hero-full-screen-bg;
-  background-size: $hero-full-screen-bg-size;
-
-  .middle-content-section {
-    color: $hero-full-screen-text-color;
-  }
-
-  .top-content-section {
+// HERO IMAGE
+.hero-image { width: 100%; height:650px;
+  img {   position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
-  }
+    height: 450px;
+    margin-top: -225px; /* Half the height */
+    margin-left: -50%; /* Half the width */}
+}
 
-  .bottom-content-section {
-    padding: 1rem;
+// GLOBAL PADDING CLASSES
+.ptb {padding: 5rem 0;}
+.pb {padding-bottom: 5rem;}
+.pt {padding-top: 5rem;}
+.no-gutters {padding: 0 !important;
+}
 
+// SERVICES BOXES
+.services-box {
+  background-color: #DA253F;
+  position: relative;
+  width: 100%;
+}
+
+.services-box:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); 
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); 
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); 
+}
+
+.content {
+  position: absolute; width: 100%; height: 100%; margin-top: 33%; padding: 5%; color: white; text-align: center;
+    .button{color:white;
+      &:hover {color:white;}
   }
 }
 
+
+.no-gutters {padding: 0 !important; 
+  a{color: white; text-align: center;}
+}
+
+.pickups { 
+  background: url(../img/pickups-bg.png) no-repeat center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.studio { 
+  background: url(../img/studio-bg.png) no-repeat center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.workshop { 
+  background: url(../img/workshop-bg.png) no-repeat center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
