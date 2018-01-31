@@ -146,3 +146,14 @@ img.menu-logo {padding-right:2rem;}
   background-size: cover;
 }
 
+// BLOG EXCERPTS
+.post-excerpts{
+  .row {border-bottom: 1px solid $medium-gray; padding: 1em 0;
+    span {
+      text-transform: uppercase;
+      color: $apex-body;}
+    button {
+      margin-top: 1em;
+    }
+  }
+}
