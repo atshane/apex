@@ -91,6 +91,9 @@ img.menu-logo {padding-right:2rem;}
     margin-left: -50%; /* Half the width */}
 }
 
+// SIDE KICK IMAGE
+.sidekick-image { width:100%; height:350px;}
+
 // GLOBAL PADDING CLASSES
 .ptb {padding: 5rem 0;}
 .pb {padding-bottom: 5rem;}
@@ -99,7 +102,34 @@ img.menu-logo {padding-right:2rem;}
 .full{width: 100%; background:$light-gray;}
 .light-bg { background:$light-gray;}
 .red-bg { background:$apex-red;}
+.dark-bg {background: $apex-body;
+  a{ color: white;}
+}
+.light-gradient-bg {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100 */
+  background: #e6e6e6; /* Old browsers */
+  background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e6e6e6 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e6e6e6 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */}
 
+  
+// FOOTER STYLES
+.footer {
+  p { color: white;}
+  a {
+    &:hover{ color: #DA253F;}
+  }
+}
+ul.social-footer { margin-left: 0; font-size: 2rem;
+  li { display: inline-block;  padding: 0 2rem 0 0;}
+}
+
+
+// PICKUP SELECTION
+.pickup-selection {
+  h3{ text-align: center;}
+  img {border: 3px solid $apex-red;}
+}
 
 // SERVICES BOXES
 .services-box {
@@ -166,3 +196,19 @@ img.menu-logo {padding-right:2rem;}
 }
 
 
+// ORBIT SLIDER TWEAKS
+figure.orbit-figure { color: white;
+  figcaption {margin: -25rem 0 0 3rem;
+    span.orbit-artist-caption {font-family: 'Contrail One', cursive; font-size: 4rem; }
+    span.orbit-pickup-name { font-size: 2rem;}
+    a { background-color: $apex-red; color: white; padding: 1rem;}
+    }
+  }  
+
+  .slider-details { color: white; margin-top: -25rem; margin-left: 5rem; padding-bottom: 5rem;
+    p.orbit-artist {font-family: 'Contrail One', cursive; font-size: 3rem; margin-bottom: -1rem;}
+    p.orbit-pickup { font-size: 2rem;}
+    a {background-color: $apex-red; padding: 1rem 2rem; color: white; text-transform: uppercase; letter-spacing: 1px;
+      &:hover { background-color: black; }
+    }
+  }
