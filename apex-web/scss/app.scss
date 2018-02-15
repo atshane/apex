@@ -99,12 +99,13 @@ img.menu-logo {padding-right:2rem;}
 .pb {padding-bottom: 5rem;}
 .pt {padding-top: 5rem;}
 .no-gutters {padding: 0 !important;}
-.full{width: 100%; background:$light-gray;}
+.full{width: 100%;}
 .light-bg { background:$light-gray;}
 .red-bg { background:$apex-red;}
 .dark-bg {background: $apex-body;
   a{ color: white;}
 }
+
 .light-gradient-bg {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100 */
   background: #e6e6e6; /* Old browsers */
   background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%); /* FF3.6-15 */
@@ -197,18 +198,17 @@ ul.social-footer { margin-left: 0; font-size: 2rem;
 
 
 // ORBIT SLIDER TWEAKS
-figure.orbit-figure { color: white;
-  figcaption {margin: -25rem 0 0 3rem;
-    span.orbit-artist-caption {font-family: 'Contrail One', cursive; font-size: 4rem; }
-    span.orbit-pickup-name { font-size: 2rem;}
-    a { background-color: $apex-red; color: white; padding: 1rem;}
-    }
-  }  
-
-  .slider-details { color: white; margin-top: -25rem; margin-left: 5rem; padding-bottom: 5rem;
-    p.orbit-artist {font-family: 'Contrail One', cursive; font-size: 3rem; margin-bottom: -1rem;}
-    p.orbit-pickup { font-size: 2rem;}
-    a {background-color: $apex-red; padding: 1rem 2rem; color: white; text-transform: uppercase; letter-spacing: 1px;
+ul.orbit-container figure.orbit-figure figcaption { position: absolute;  bottom: 0; color: white; margin-bottom: -50px;
+    .orbit-artist { font-family: 'Contrail One', cursive; font-size: 3rem; margin-left: 5rem;}
+    .orbit-pickup { font-size: 2rem; margin-left: 5rem; margin-bottom: 5rem; }
+}
+ul.orbit-container figure.orbit-figure a {background-color: $apex-red; padding: 1rem 2rem; color: white; text-transform: uppercase; letter-spacing: 1px;
       &:hover { background-color: black; }
     }
-  }
+
+// MOUNTIAN BG
+.mountian-bg {
+  background: url(../img/mountian-light.png);
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-position: bottom center; }
