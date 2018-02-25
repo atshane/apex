@@ -67,7 +67,21 @@ p.bigger {font-size: 1.125rem; line-height: 2rem;}
 input[type=text]  {border:none; height: 2.8rem;}
 input[type=email] {border:none; height: 2.8rem;}
 input[type=submit] {background: #000;height:2.8rem; font-size: 0.825rem; margin-top: 1.3rem; cursor:pointer;}
-
+span.price { 
+  background: $apex-red; 
+  color:#ffffff; 
+  padding: 1em; 
+  text-transform: uppercase; 
+  font-size: 1.125rem; 
+  letter-spacing: 1px; 
+  font-weight: 500; 
+  border: 3px solid #DA253F; 
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+  text-align: center;
+}
 
 // NAVIGATION
 ul.menu{
@@ -79,6 +93,10 @@ ul.menu{
 .dropdown.menu a {padding-top: 1.2rem;} 
 .dropdown.menu>li.is-dropdown-submenu-parent>a::after {margin-top: 1px !important;}
 img.menu-logo {padding-right:2rem;}
+
+
+//BREADCRUMBS
+.breadcrumbs {padding: 0.7rem;}
 
 // HERO IMAGE
 .hero-image { width: 100%; height:650px;
@@ -102,17 +120,17 @@ img.menu-logo {padding-right:2rem;}
 .full{width: 100%;}
 .light-bg { background:$light-gray;}
 .red-bg { background:$apex-red;}
-.dark-bg {background: $apex-body;
+.dark-bg {background: $apex-body; color:white;
   a{ color: white;}
 }
-
+.flush-nudge {margin-top: -4px;}
 .light-gradient-bg {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100 */
   background: #e6e6e6; /* Old browsers */
   background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #e6e6e6 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #e6e6e6 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */}
-
+.divider {border-right:1px solid $medium-gray;}
   
 // FOOTER STYLES
 .footer {
@@ -196,7 +214,6 @@ ul.social-footer { margin-left: 0; font-size: 2rem;
   }
 }
 
-
 // ORBIT SLIDER TWEAKS
 ul.orbit-container figure.orbit-figure figcaption { position: absolute;  bottom: 0; color: white; margin-bottom: -50px;
     .orbit-artist { font-family: 'Contrail One', cursive; font-size: 3rem; margin-left: 5rem;}
@@ -212,3 +229,76 @@ ul.orbit-container figure.orbit-figure a {background-color: $apex-red; padding: 
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-position: bottom center; }
+
+  // CTA
+  p.cta-links { font-size: 24px; color: $apex-red; padding-top: 2rem; font-weight: 500;
+    a{padding:2rem; text-decoration: underline;}
+  }
+
+  // AUDIO PLAYER
+
+
+
+/* Setup
+================================================== */
+
+
+/* Audio Player Styles
+================================================== */
+
+audio {margin:0 15px 0 14px; }
+#audiowrap, #plwrap { margin:0 auto; border:1px solid $medium-gray;}
+#tracks { position:relative; text-align:center; }
+#nowPlay { display:inline;}
+#npAction { padding:21px; position:absolute;}
+#npTitle { padding:21px;}
+ul#plList {margin-left: 0!important; margin-bottom: 0!important;}
+#plList li { cursor:pointer; display:block; margin:0; padding:1em 0; border-bottom: 1px solid $medium-gray;}
+#plList li:hover { background-color:$light-gray}
+.plItem { position:relative;}
+.plTitle { left:50px; overflow:hidden; position:absolute; right:65px; text-overflow:ellipsis; top:0; white-space:nowrap; }
+.plNum { padding-left:21px; width:25px; }
+.plLength { padding-left:21px; position:absolute; right:21px; top:0; }
+.plSel, .plSel:hover { background-color:$light-gray; color:$apex-red; cursor:default !important; }
+a[id^="btn"] { border-radius:3px; color:$apex-body; cursor:pointer; display:inline-block; font-size:1rem;  text-decoration:none; transition:background .3s ease; width:35px;}
+a[id^="btn"]:last-child { margin-left:-4px; }
+a[id^="btn"]:hover, a[id^="btn"]:active {  color:$apex-red; }
+a[id^="btn"]::-moz-focus-inner { border:0; padding:0; }
+
+/* Plyr Overrides
+================================================== */
+
+.plyr--audio .plyr__controls {
+background-color:transparent;
+border:none;
+color:$apex-body;
+padding:20px 20px 20px 13px;
+width:100%;
+}
+
+.plyr--audio .plyr__controls button.tab-focus:focus,
+.plyr--audio .plyr__controls button:hover,
+.plyr__play-large {
+background:rgba(0,0,0,.1);
+}
+
+.plyr__progress--played, .plyr__volume--display {
+color:rgba(0,0,0,.1);
+}
+
+.plyr--audio .plyr__progress--buffer,
+.plyr--audio .plyr__volume--display {
+background:rgba(0,0,0,.1);
+}
+
+.plyr--audio .plyr__progress--buffer {
+color:rgba(0,0,0,.1);
+}
+
+
+/* Media Queries
+================================================== */
+
+@media only screen and (max-width:850px) {
+    #nowPlay { display:none; }
+}
