@@ -58,6 +58,9 @@
 a {letter-spacing: 1px; transition: all 0.5s ease;}
 p.bigger {font-size: 1.125rem; line-height: 2rem;}
 
+.left {float: left;}
+.right {float: right;}
+
 // BUTTON STYLES 
 .button {
   text-transform: uppercase; font-size: 1.125rem; letter-spacing: 1px; transition: all 0.5s ease; font-weight: 500;}
@@ -68,19 +71,18 @@ input[type=text]  {border:none; height: 2.8rem;}
 input[type=email] {border:none; height: 2.8rem;}
 input[type=submit] {background: #000;height:2.8rem; font-size: 0.825rem; margin-top: 1.3rem; cursor:pointer;}
 span.price { 
-  background: $apex-red; 
-  color:#ffffff; 
+  color:white;
   padding: 1em; 
   text-transform: uppercase; 
   font-size: 1.125rem; 
   letter-spacing: 1px; 
   font-weight: 500; 
-  border: 3px solid #DA253F; 
   display: inline-block;
   vertical-align: middle;
   margin: 0 0 1rem 0;
   line-height: 1;
   text-align: center;
+  background: $apex-body;
 }
 
 // NAVIGATION
@@ -96,7 +98,7 @@ img.menu-logo {padding-right:2rem;}
 
 
 //BREADCRUMBS
-.breadcrumbs {padding: 0.7rem;}
+.breadcrumbs {padding-top: 1em;}
 
 // HERO IMAGE
 .hero-image { width: 100%; height:650px;
@@ -116,6 +118,9 @@ img.menu-logo {padding-right:2rem;}
 .ptb {padding: 5rem 0;}
 .pb {padding-bottom: 5rem;}
 .pt {padding-top: 5rem;}
+.ptb-s {padding: 2.5rem 0;}
+.pb-s {padding-bottom: 2.5rem;}
+.pt-s {padding-top: 2.5rem;}
 .no-gutters {padding: 0 !important;}
 .full{width: 100%;}
 .light-bg { background:$light-gray;}
@@ -143,13 +148,17 @@ ul.social-footer { margin-left: 0; font-size: 2rem;
   li { display: inline-block;  padding: 0 2rem 0 0;}
 }
 
-
 // PICKUP SELECTION
 .pickup-selection {
-  h3{ text-align: center;}
   img {border: 3px solid $apex-red;}
 }
 
+// PICKUP RESISTANCE 
+ul.resistance {
+  margin-left: 0;
+  list-style: none;
+    li {display: inline; padding-right:1em;}
+}
 // SERVICES BOXES
 .services-box {
   background-color: #DA253F;
@@ -236,16 +245,6 @@ ul.orbit-container figure.orbit-figure a {background-color: $apex-red; padding: 
   }
 
   // AUDIO PLAYER
-
-
-
-/* Setup
-================================================== */
-
-
-/* Audio Player Styles
-================================================== */
-
 audio {margin:0 15px 0 14px; }
 #audiowrap, #plwrap { margin:0 auto; border:1px solid $medium-gray;}
 #tracks { position:relative; text-align:center; }
@@ -265,9 +264,7 @@ a[id^="btn"]:last-child { margin-left:-4px; }
 a[id^="btn"]:hover, a[id^="btn"]:active {  color:$apex-red; }
 a[id^="btn"]::-moz-focus-inner { border:0; padding:0; }
 
-/* Plyr Overrides
-================================================== */
-
+// Plyr Overrides
 .plyr--audio .plyr__controls {
 background-color:transparent;
 border:none;
@@ -293,12 +290,4 @@ background:rgba(0,0,0,.1);
 
 .plyr--audio .plyr__progress--buffer {
 color:rgba(0,0,0,.1);
-}
-
-
-/* Media Queries
-================================================== */
-
-@media only screen and (max-width:850px) {
-    #nowPlay { display:none; }
 }
