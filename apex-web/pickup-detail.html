@@ -147,29 +147,25 @@
     
 
     <div class="large-6 columns">
-        <h3>Video clips</h3>
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="column add-bottom">
-                    <!-- <div id="nowPlay">
-                        <span class="left" id="npAction">Paused...</span>
-                        <span class="right" id="npTitle"></span>
-                    </div> -->
-                    <div id="audiowrap">
-                        <div id="audio0">
-                            <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
-                            <a id="btnPrev">&larr;</a>
-                            <a id="btnNext">&rarr;</a>
-                        </div>
-                    </div>
-                    <div id="plwrap">
-                        <ul id="plList"></ul>
-                    </div>
-                </div>
-            </div>
+      <h3>Video clips</h3>
+      <div class="row">
+        <div class="large-12 columns">
+            <video poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" controls crossorigin>
+              <!-- Video files -->
+              <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.mp4" type="video/mp4">
+              <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.webm" type="video/webm">
+          
+              <!-- Text track file -->
+              <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
+          
+              <!-- Fallback for browsers that don't support the <video> element -->
+              <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.mp4" download>Download</a>
+            </video>
           </div>
-        </div> 
-    </div>
+        </div>
+      </div>
+    
+      </div>
 
   <!-- OTHER PICKUPS -->
   <div class="full dark-bg ptb">
@@ -359,5 +355,56 @@
       "img/pickup-index-bg.png",
     ], { duration: 3000, fade: 750 });
   </script>
+  <script>
+  (function() { 
+    // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
+    // e.g. just plyr.setup(); and leave it at that if you have no need for events
+    var instances = plyr.setup({
+      // Output to console
+      debug: true
+    });
+  
+    // Get an element
+    function get(selector) {
+      return document.querySelector(selector);
+    }
+  
+    // Custom event handler (just for demo)
+    function on(element, type, callback) {
+      if (!(element instanceof HTMLElement)) {
+        element = get(element);
+      }
+      element.addEventListener(type, callback, false);
+    }
+  
+    // Loop through each instance
+    instances.forEach(function(instance) {
+      // Play
+      on('.js-play', 'click', function() { 
+        instance.play();
+      });
+      
+      // Pause
+      on('.js-pause', 'click', function() { 
+        instance.pause();
+      });
+      
+      // Stop
+      on('.js-stop', 'click', function() { 
+        instance.stop();
+      });
+      
+      // Rewind
+      on('.js-rewind', 'click', function() { 
+        instance.rewind();
+      });
+      
+      // Forward
+      on('.js-forward', 'click', function() { 
+        instance.forward();
+      });
+    });
+  })();
+</script>
 </body>
 </html>
